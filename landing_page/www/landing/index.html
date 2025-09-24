@@ -26,6 +26,18 @@
   <!-- Main CSS File -->
   <link href="/assets/landing_page/css/main.css" rel="stylesheet">
 
+  <style>
+    #logo {
+      transition: background-color 0.3s ease, padding 0.3s ease;
+      transform: scale(1.6); 
+   
+    }
+
+    #logo.scrolled {
+      transform: scale(1.7); 
+     
+    }
+  </style>
   <!-- =======================================================
   * Template Name: Passion
   * Template URL: https://bootstrapmade.com/passion-bootstrap-template/
@@ -59,8 +71,8 @@
       <div class="container position-relative d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="/assets/landing_page/img/logo.webp" alt=""> -->
-          <h1 class="sitename">Passion</h1>
+          <h1 class="sitename">PETIKESRA</h1>
+          <img src="assets/img/logo.webp" id="logo" alt="" >
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -1566,7 +1578,18 @@
 
   <!-- Main JS File -->
   <script src="/assets/landing_page/js/main.js"></script>
-
+   <script>
+    window.addEventListener('scroll', function() {
+        const logo = document.getElementById('logo');
+        if (window.scrollY > 100) { // scroll lebih dari 70px
+            logo.src = "assets/img/logo-border.webp"; 
+            logo.classList.add('scrolled');
+        } else {
+            logo.src = "assets/img/logo.webp"; 
+            logo.classList.remove('scrolled');
+        }
+    });
+  </script>
 </body>
 
 </html>

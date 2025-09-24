@@ -2440,7 +2440,7 @@ section,
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("../img/abstract-bg-3.webp") center/cover;
+  /* background: url("../img/abstract-bg-3.webp") center/cover; */
   opacity: 0.03;
   z-index: 1;
 }
