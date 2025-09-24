@@ -57,7 +57,7 @@ app_license = "agpl-3.0"
 # ----------
 
 # application home page (will override Website Settings)
-# home_page = "login"
+# home_page = "index"
 
 # website user home page (by Role)
 # role_home_page = {
@@ -197,7 +197,6 @@ app_license = "agpl-3.0"
 
 # ignore_links_on_delete = ["Communication", "ToDo"]
 
-# Request Events
 # ----------------
 # before_request = ["landing_page.utils.before_request"]
 # after_request = ["landing_page.utils.after_request"]
