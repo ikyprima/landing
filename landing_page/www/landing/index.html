@@ -72,7 +72,7 @@
         <a href="index.html" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <h1 class="sitename">PETIKESRA</h1>
-          <img src="assets/img/logo.webp" id="logo" alt="" >
+          <img src="/assets/landing_page/img/logo.webp" id="logo" alt="" >
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -1582,10 +1582,10 @@
     window.addEventListener('scroll', function() {
         const logo = document.getElementById('logo');
         if (window.scrollY > 100) { // scroll lebih dari 70px
-            logo.src = "assets/img/logo-border.webp"; 
+            logo.src = "/assets/landing_page/img/logo-border.webp"; 
             logo.classList.add('scrolled');
         } else {
-            logo.src = "assets/img/logo.webp"; 
+            logo.src = "/assets/landing_page/img/logo.webp"; 
             logo.classList.remove('scrolled');
         }
     });
