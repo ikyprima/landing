@@ -5,8 +5,10 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Index - Passion Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta name="description" content="Platform LMS untuk belajar online dengan mudah. Temukan berbagai kursus menarik, dari mana saja, kapan saja.">
+  <meta name="keywords" content="LMS, kursus keuangan, belajar online, Sumatera Barat LMS, LMS sumbar">
+  <meta name="author" content="Rizky Primadona">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Favicons -->
   <link href="/assets/landing_page/img/favicon.png" rel="icon">
@@ -36,6 +38,14 @@
     #logo.scrolled {
       transform: scale(1.7); 
      
+    }
+    .btn-custom {
+      border-color: #108F5F;
+      color: #108F5F;
+    }
+    .btn-custom:hover {
+      background-color: #108F5F;
+      color: #fff;
     }
   </style>
   <!-- =======================================================
@@ -77,7 +87,7 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#hero" class="active">Beranda</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
@@ -501,10 +511,10 @@
         <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="content">
-              <h2>Transforming Ideas Into Reality Since 2015</h2>
-              <p class="lead">We are a passionate team of innovators dedicated to creating exceptional digital experiences that drive meaningful results for businesses worldwide.</p>
-              <p>Our journey began with a simple vision: to bridge the gap between cutting-edge technology and human-centered design. Today, we've grown into a trusted partner for companies seeking to transform their digital presence and accelerate their growth.</p>
-              <p>Through collaborative partnerships and innovative solutions, we've helped hundreds of organizations achieve their goals while building lasting relationships founded on trust, transparency, and exceptional results.</p>
+              <h2>“Membangun Literasi Keuangan Daerah Terintegrasi untuk ASN”</h2>
+              <p class="lead">PETIKESRA hadir sebagai pusat literasi digital dan self-learning untuk meningkatkan kapasitas ASN dalam pengelolaan keuangan daerah.</p>
+              <p>Program PETIKESRA (Pojok Literasi Keuangan Daerah Secara Terintegrasi) dikembangkan sebagai solusi atas kebutuhan peningkatan kapasitas ASN di bidang pengelolaan keuangan daerah. Melalui platform berbasis Learning Management System (LMS), program ini menyediakan materi pembelajaran, literasi keuangan, serta ruang pembinaan yang dapat diakses kapan saja dan di mana saja.</p>
+              <p>PETI KESRA bukan hanya tempat belajar, melainkan juga sarana kolaborasi antar instansi dan OPD untuk memperkuat tata kelola keuangan yang akuntabel, transparan, dan berkelanjutan. Dengan konsep self-learning, ASN dapat meningkatkan pengetahuan, keterampilan, serta memperoleh sertifikasi kompetensi secara mandiri. Hal ini diharapkan dapat mendorong terciptanya pengelolaan keuangan daerah yang lebih profesional, modern, dan terpercaya.</p>
 
               <div class="stats-container">
                 <div class="row">
@@ -529,7 +539,32 @@
                 </div>
               </div>
 
-             
+             <h2>Latest Courses</h2>
+              <div class="row">
+                {% for course in courses %}
+                  <div class="col-md-4">
+                    <div class="card mb-3">
+                      <img src="{{ course.image }}" class="card-img-top" alt="{{ course.title }}">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ course.title }}</h5>
+                        <p class="card-text">{{ course.short_introduction }}</p>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+
+              <h2>Latest Batches</h2>
+              <ul>
+                {% for batch in batches %}
+                  <li>
+                    <strong>{{ batch.title }}</strong>
+                    ({{ batch.start_date }} → {{ batch.end_date }})
+                    <p>{{ batch.description }}</p>
+                  </li>
+                {% endfor %}
+              </ul>
+
             </div>
           </div>
 
@@ -769,7 +804,14 @@
             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
           </div>
         </div>
-
+        <div class="row">
+          <div class="col-12 text-center">
+              <a href="#projects" class="btn btn-custom rounded-pill px-4 py-2 d-inline-flex align-items-center">
+                <i class="bi bi-grid me-2"></i>
+                <span>Lihat Semua</span>
+              </a>
+          </div>
+        </div>
       </div>
 
     </section><!-- /How We Work Section -->
@@ -794,13 +836,13 @@
                 <i class="bi bi-code-slash"></i>
               </div>
               <div class="service-content">
-                <h3><a href="service-details.html">Peraturan Mentri Keuangan</a></h3>
+                <h3><a href="#">Peraturan Mentri Keuangan</a></h3>
                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec rutrum congue leo eget malesuada.</p>
                 <div class="service-meta">
                   <span class="badge popular">Most Popular</span>
                   <span class="price">Starting at $2,999</span>
                 </div>
-                <a href="service-details.html" class="btn-cta">
+                <a href="#" class="btn-cta">
                   <span>Get Started</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
@@ -815,12 +857,12 @@
                 <i class="bi bi-palette"></i>
               </div>
               <div class="service-content">
-                <h3><a href="service-details.html">Peraturan Mentri Dalam Negri</a></h3>
+                <h3><a href="#">Peraturan Mentri Dalam Negri</a></h3>
                 <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.</p>
                 <div class="service-meta">
                   <span class="price">Starting at $1,899</span>
                 </div>
-                <a href="service-details.html" class="btn-cta">
+                <a href="#" class="btn-cta">
                   <span>Learn More</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
@@ -836,9 +878,9 @@
                 <i class="bi bi-shield-check"></i>
               </div>
               <div class="service-content">
-                <h3><a href="service-details.html">Undang-undang</a></h3>
+                <h3><a href="#">Undang-undang</a></h3>
                 <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar vel. Sed porttitor lectus nibh vestibulum ac diam sit.</p>
-                <a href="service-details.html" class="btn-cta">
+                <a href="#" class="btn-cta">
                   <span>Discover</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
@@ -853,9 +895,9 @@
                 <i class="bi bi-cloud-upload"></i>
               </div>
               <div class="service-content">
-                <h3><a href="service-details.html">Peraturan Presiden</a></h3>
+                <h3><a href="#">Peraturan Presiden</a></h3>
                 <p>Pellentesque in ipsum id orci porta dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.</p>
-                <a href="service-details.html" class="btn-cta">
+                <a href="#" class="btn-cta">
                   <span>Get Quote</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
@@ -870,9 +912,9 @@
                 <i class="bi bi-graph-up-arrow"></i>
               </div>
               <div class="service-content">
-                <h3><a href="service-details.html">Peraturan Daerah</a></h3>
+                <h3><a href="#">Peraturan Daerah</a></h3>
                 <p>Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
-                <a href="service-details.html" class="btn-cta">
+                <a href="#" class="btn-cta">
                   <span>Explore</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
@@ -886,9 +928,9 @@
                 <i class="bi bi-graph-up-arrow"></i>
               </div>
               <div class="service-content">
-                <h3><a href="service-details.html">Peraturan Gubernur</a></h3>
+                <h3><a href="#">Peraturan Gubernur</a></h3>
                 <p>Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
-                <a href="service-details.html" class="btn-cta">
+                <a href="#" class="btn-cta">
                   <span>Explore</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
@@ -935,7 +977,7 @@
    
 
     <!-- Faq Section -->
-    <section id="faq" class="faq section">
+    <section id="faq" class="faq section light-background">
 
       <!-- Section Title -->
       <div class="container section-title">
@@ -1049,187 +1091,6 @@
 
     </section><!-- /Faq Section -->
 
-    <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section light-background">
-
-      <div class="container">
-
-        <div class="cta-wrapper">
-          <div class="cta-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-          </div>
-
-          <div class="row g-0">
-            <div class="col-lg-7">
-              <div class="cta-content p-5">
-                <span class="badge-custom">Premium Offer</span>
-                <h2 class="mt-4 mb-4">Transform Your Experience With Our Solution</h2>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-
-                <div class="row benefits-row mb-5">
-                  <div class="col-md-6">
-                    <div class="benefit-item">
-                      <div class="icon-box">
-                        <i class="bi bi-lightning-charge-fill"></i>
-                      </div>
-                      <div class="benefit-content">
-                        <h5>Quick Setup</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="benefit-item">
-                      <div class="icon-box">
-                        <i class="bi bi-shield-check"></i>
-                      </div>
-                      <div class="benefit-content">
-                        <h5>Full Security</h5>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="action-buttons">
-                  <a href="#" class="btn btn-primary">Start Now</a>
-                  <a href="#" class="btn btn-outline">Learn More</a>
-                  <div class="guarantee-badge">
-                    <i class="bi bi-patch-check-fill"></i>
-                    <span>30-Day Money Back</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-5">
-              <div class="cta-image-container">
-                <img src="/assets/landing_page/img/illustration/illustration-3.webp" alt="Illustration" class="img-fluid main-image">
-                <div class="floating-element element-1">
-                  <i class="bi bi-star-fill"></i>
-                  <span>4.9 Rating</span>
-                </div>
-                <div class="floating-element element-2">
-                  <i class="bi bi-people-fill"></i>
-                  <span>10k+ Users</span>
-                </div>
-                <div class="pattern-dots"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Call To Action Section -->
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
-
-      <div class="container">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 1
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="/assets/landing_page/img/person/person-m-9.webp" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="/assets/landing_page/img/person/person-f-5.webp" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="/assets/landing_page/img/person/person-f-12.webp" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="/assets/landing_page/img/person/person-m-12.webp" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="/assets/landing_page/img/person/person-m-13.webp" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
 
 
     <!-- Team Section -->
