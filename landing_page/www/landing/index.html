@@ -639,21 +639,30 @@
                 }
               </script>
               <div class="swiper-wrapper">
-
-                {% for batch in batches %}
-                  <div class="swiper-slide">
-                    <div class="service-card">
-                        <img src="/assets/landing_page/img/indonesia/1.webp" class="card-img-top" alt="Feature Image">
-                      <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
-                      <div class="content">
-                        <h4><a href="#">Financial Strategy Development</a></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Cras vehicula magna eget lectus varius, at finibus massa condimentum.</p>
-                        <div class="service-number">01</div>
-                        <a href="#portfolio" class="btn btn-primary">detail</a>
+                {% if batches and batches|length > 0 %}
+                  {% for batch in batches %}
+                    <div class="swiper-slide">
+                      <div class="service-card">
+                          <img src="/assets/landing_page/img/indonesia/{{ loop.index }}.webp" class="card-img-top" alt="Feature Image">
+                        <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
+                        <div class="content">
+                          <h4><a href="#">>{{ batch.title }}</a></h4>
+                          <p>{{ batch.description | truncate(120, True, '...') }}</p>
+                          <div class="service-number">01</div>
+                          <a href="/lms/batches/details/{{ batch.title }}" class="btn btn-primary">detail</a>
+                        </div>
                       </div>
                     </div>
+                  {% endfor %}
+                {% else %}
+                  <div class="row mb-3">
+                    <div class="col-12 text-center">
+                      <span class="badge text-dark px-3 py-2 rounded-pill section-title">
+                        <h2>🚀 Belum ada webinar dalam waktu dekat, akan segera hadir</h2>
+                      </span>
+                    </div>
                   </div>
-                {% endfor %}
+                {% endif %}
 
               </div>
             </div>
