@@ -47,6 +47,16 @@
       background-color: #108F5F;
       color: #fff;
     }
+    .card-img-top {
+      height: 150px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .card-img-top {
+        height: 150px;
+      }
+    }
   </style>
   <!-- =======================================================
   * Template Name: Passion
@@ -661,9 +671,7 @@
 
                 <div class="swiper-slide">
                   <div class="service-card">
-                    <div class="icon-box">
-                      <i class="bi bi-bar-chart-fill"></i>
-                    </div>
+                      <img src="/assets/landing_page/img/person/person-m-3.webp" class="card-img-top" alt="Feature Image">
                     <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
                     <div class="content">
                       <h4><a href="#">Financial Strategy Development</a></h4>
