@@ -548,33 +548,6 @@
                   </div>
                 </div>
               </div>
-
-             <h2>Latest Courses</h2>
-              <div class="row">
-                {% for course in courses %}
-                  <div class="col-md-4">
-                    <div class="card mb-3">
-                      <img src="{{ course.image }}" class="card-img-top" alt="{{ course.title }}">
-                      <div class="card-body">
-                        <h5 class="card-title">{{ course.title }}</h5>
-                        <p class="card-text">{{ course.short_introduction }}</p>
-                      </div>
-                    </div>
-                  </div>
-                {% endfor %}
-              </div>
-
-              <h2>Latest Batches</h2>
-              <ul>
-                {% for batch in batches %}
-                  <li>
-                    <strong>{{ batch.title }}</strong>
-                    ({{ batch.start_date }} → {{ batch.end_date }})
-                    <p>{{ batch.description }}</p>
-                  </li>
-                {% endfor %}
-              </ul>
-
             </div>
           </div>
 
@@ -598,15 +571,13 @@
 
     </section><!-- /About Section -->
 
-   
     <!-- Featured Services Section -->
     <section id="featured-services" class="featured-services section light-background">
 
       <!-- Section Title -->
       <div class="container section-title">
         <h2>WEBINAR</h2>
-        <p>Program webinar yang dirancang untuk menambah wawasan, berbagi pengalaman, 
-  dan memberikan solusi praktis bagi peserta di berbagai bidang.</p>
+        <p>Program webinar yang dirancang untuk menambah wawasan, berbagi pengalaman, dan memberikan solusi praktis bagi peserta di berbagai bidang.</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -669,73 +640,20 @@
               </script>
               <div class="swiper-wrapper">
 
-                <div class="swiper-slide">
-                  <div class="service-card">
-                      <img src="/assets/landing_page/img/indonesia/1.webp" class="card-img-top" alt="Feature Image">
-                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
-                    <div class="content">
-                      <h4><a href="#">Financial Strategy Development</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Cras vehicula magna eget lectus varius, at finibus massa condimentum.</p>
-                      <div class="service-number">01</div>
+                {% for batch in batches %}
+                  <div class="swiper-slide">
+                    <div class="service-card">
+                        <img src="/assets/landing_page/img/indonesia/1.webp" class="card-img-top" alt="Feature Image">
+                      <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
+                      <div class="content">
+                        <h4><a href="#">Financial Strategy Development</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Cras vehicula magna eget lectus varius, at finibus massa condimentum.</p>
+                        <div class="service-number">01</div>
+                        <a href="#portfolio" class="btn btn-primary">detail</a>
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="service-card">
-                    <div class="icon-box">
-                      <i class="bi bi-graph-up-arrow"></i>
-                    </div>
-                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
-                    <div class="content">
-                      <h4><a href="#">Market Expansion Advisory</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Cras vehicula magna eget lectus varius, at finibus massa condimentum.</p>
-                      <div class="service-number">02</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="service-card">
-                    <div class="icon-box">
-                      <i class="bi bi-shield-check"></i>
-                    </div>
-                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
-                    <div class="content">
-                      <h4><a href="#">Risk Management Solutions</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Cras vehicula magna eget lectus varius, at finibus massa condimentum.</p>
-                      <div class="service-number">03</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="service-card">
-                    <div class="icon-box">
-                      <i class="bi bi-lightbulb-fill"></i>
-                    </div>
-                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
-                    <div class="content">
-                      <h4><a href="#">Innovation &amp; Digital Transformation</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Cras vehicula magna eget lectus varius, at finibus massa condimentum.</p>
-                      <div class="service-number">04</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="service-card">
-                    <div class="icon-box">
-                      <i class="bi bi-people-fill"></i>
-                    </div>
-                    <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
-                    <div class="content">
-                      <h4><a href="#">Talent Management Strategy</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Cras vehicula magna eget lectus varius, at finibus massa condimentum.</p>
-                      <div class="service-number">05</div>
-                    </div>
-                  </div>
-                </div>
+                {% endfor %}
 
               </div>
             </div>
