@@ -47,6 +47,16 @@
       background-color: #108F5F;
       color: #fff;
     }
+    
+    .btn-custom-detail {
+      border-color: #108F5F;
+      color: #108F5F;
+    }
+
+    .btn-custom-detail:hover {
+      background-color: #fff;
+      color: #fff;
+    }
     .card-img-top {
       height: 150px;
       object-fit: cover;
@@ -522,7 +532,7 @@
           <div class="col-lg-6">
             <div class="content">
               <h2>“Membangun Literasi Keuangan Daerah Terintegrasi untuk ASN”</h2>
-              <p class="lead">PETIKESRA hadir sebagai pusat literasi digital dan self-learning untuk meningkatkan kapasitas ASN dalam pengelolaan keuangan daerah.</p>
+              <p class="lead">PETIKESRA hadir sebagai pusat literasi digital dan self-learning</p>
               <p>Program PETIKESRA (Pojok Literasi Keuangan Daerah Secara Terintegrasi) dikembangkan sebagai solusi atas kebutuhan peningkatan kapasitas ASN di bidang pengelolaan keuangan daerah. Melalui platform berbasis Learning Management System (LMS), program ini menyediakan materi pembelajaran, literasi keuangan, serta ruang pembinaan yang dapat diakses kapan saja dan di mana saja.</p>
               <p>PETI KESRA bukan hanya tempat belajar, melainkan juga sarana kolaborasi antar instansi dan OPD untuk memperkuat tata kelola keuangan yang akuntabel, transparan, dan berkelanjutan. Dengan konsep self-learning, ASN dapat meningkatkan pengetahuan, keterampilan, serta memperoleh sertifikasi kompetensi secara mandiri. Hal ini diharapkan dapat mendorong terciptanya pengelolaan keuangan daerah yang lebih profesional, modern, dan terpercaya.</p>
 
@@ -643,13 +653,21 @@
                   {% for batch in batches %}
                     <div class="swiper-slide">
                       <div class="service-card">
-                          <img src="/assets/landing_page/img/indonesia/{{ loop.index }}.webp" class="card-img-top" alt="Feature Image">
-                        <a href="#" class="arrow-link"><i class="bi bi-arrow-right"></i></a>
+                        <img src="/assets/landing_page/img/indonesia/{{ loop.index }}.webp" class="card-img-top" alt="Feature Image">
+                        <a href="/lms/batches/details/{{ batch.name }}"  class="arrow-link"><i class="bi bi-arrow-right"></i></a>
                         <div class="content">
-                          <h4><a href="#">>{{ batch.title }}</a></h4>
+                          <h4>
+                            <a href="/lms/batches/details/{{ batch.name }}" >{{ batch.title }}</a>
+                          </h4>
                           <p>{{ batch.description | truncate(120, True, '...') }}</p>
-                          <div class="service-number">01</div>
-                          <a href="/lms/batches/details/{{ batch.title }}" class="btn btn-primary">detail</a>
+                            <div class="row">
+                              <div class="col-12 text-center">
+                                  <a  href="/lms/batches/details/{{ batch.name }}" class="btn btn-custom-detail rounded-pill px-4 py-2 d-inline-flex align-items-center">
+                                    <i class="bi bi-grid me-2"></i>
+                                    <span>Daftar</span>
+                                  </a>
+                              </div>
+                            </div>
                         </div>
                       </div>
                     </div>
@@ -657,8 +675,8 @@
                 {% else %}
                   <div class="row mb-3">
                     <div class="col-12 text-center">
-                      <span class="badge text-dark px-3 py-2 rounded-pill section-title">
-                        <h2>🚀 Belum ada webinar dalam waktu dekat, akan segera hadir</h2>
+                      <span class="badge text-dark px-3 py-2 rounded-pill bg-green">
+                        <h2>Belum ada webinar dalam waktu dekat, akan segera hadir</h2>
                       </span>
                     </div>
                   </div>
@@ -692,53 +710,37 @@
       </div><!-- End Section Title -->
 
       <div class="container">
+        {% if courses %}
+        
+            {% for course in courses %}
+              <div class="col-md-4">
+                <div class="card mb-3">
+                  <img src="{{ course.image }}" class="card-img-top" alt="{{ course.title }}">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ course.title }}</h5>
+                    <p class="card-text">{{ course.short_introduction }}</p>
+                  </div>
+                </div>
+              </div>
 
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-icon">
-              <i class="bi bi-search"></i>
-            </div>
-            <div class="step-number">Step 1</div>
-            <h3>Research &amp; Planning</h3>
-            <p>Nulla facilisi morbi tempus iaculis urna id. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere.</p>
-            <div class="step-arrow">
-              <i class="bi bi-arrow-right"></i>
-            </div>
-          </div>
+              <div class="steps-grid">
+                <div class="step-card">
+                  <img src="{{ course.image }}" class="card-img-top" alt="{{ course.title }}">
+                  <div class="step-number">Lihat</div>
+                  <h3>{{ course.title }}</h3>
+                  <p>{{ course.short_introduction | truncate(100, True, "...") }}</p>
+                </div>
+              </div>
 
-          <div class="step-card">
-            <div class="step-icon">
-              <i class="bi bi-lightbulb"></i>
-            </div>
-            <div class="step-number">Step 2</div>
-            <h3>Creative Solutions</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-            <div class="step-arrow">
-              <i class="bi bi-arrow-right"></i>
-            </div>
-          </div>
 
-          <div class="step-card">
-            <div class="step-icon">
-              <i class="bi bi-gear"></i>
-            </div>
-            <div class="step-number">Step 3</div>
-            <h3>Development</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-            <div class="step-arrow">
-              <i class="bi bi-arrow-right"></i>
-            </div>
-          </div>
 
-          <div class="step-card">
-            <div class="step-icon">
-              <i class="bi bi-rocket-takeoff"></i>
-            </div>
-            <div class="step-number">Step 4</div>
-            <h3>Launch &amp; Support</h3>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
-          </div>
-        </div>
+            {% endfor %}
+          
+        {% else %}
+          <p class="text-muted">Belum ada course tersedia saat ini.</p>
+        {% endif %}
+
+
         <div class="row">
           <div class="col-12 text-center">
               <a href="#projects" class="btn btn-custom rounded-pill px-4 py-2 d-inline-flex align-items-center">
