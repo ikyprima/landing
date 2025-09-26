@@ -711,34 +711,16 @@
 
       <div class="container">
         {% if courses %}
-        
+          <div class="steps-grid">
             {% for course in courses %}
-              <div class="col-md-4">
-                <div class="card mb-3">
-                  <img src="{{ course.image }}" class="card-img-top" alt="{{ course.title }}">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ course.title }}</h5>
-                    <p class="card-text">{{ course.short_introduction }}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="steps-grid">
                 <div class="step-card">
                   <img src="{{ course.image }}" class="card-img-top img-fluid rounded shadow" alt="{{ course.title }}">
-
-                  <div class="step-number mt-4">
-                    <a href="/lms/courses/{{ course.name }}" class="btn btn-primary">Lihat</a>
-                  </div>
+                    <a href="/lms/courses/{{ course.name }}" class="btn step-number mt-4">Lihat</a>
                   <h3>{{ course.title }}</h3>
                   <p>{{ course.short_introduction | truncate(100, True, "...") }}</p>
                 </div>
-              </div>
-
-
-
             {% endfor %}
-          
+          </div>
         {% else %}
           <p class="text-muted">Belum ada course tersedia saat ini.</p>
         {% endif %}
