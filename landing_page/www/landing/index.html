@@ -531,7 +531,7 @@
         <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="content">
-              <h2>“Membangun Literasi Keuangan Daerah Terintegrasi untuk ASN”</h2>
+              <h2>“Membangun Literasi Keuangan Daerah Terintegrasi”</h2>
               <p class="lead">PETIKESRA hadir sebagai pusat literasi digital dan self-learning</p>
               <p>Program PETIKESRA (Pojok Literasi Keuangan Daerah Secara Terintegrasi) dikembangkan sebagai solusi atas kebutuhan peningkatan kapasitas ASN di bidang pengelolaan keuangan daerah. Melalui platform berbasis Learning Management System (LMS), program ini menyediakan materi pembelajaran, literasi keuangan, serta ruang pembinaan yang dapat diakses kapan saja dan di mana saja.</p>
               <p>PETI KESRA bukan hanya tempat belajar, melainkan juga sarana kolaborasi antar instansi dan OPD untuk memperkuat tata kelola keuangan yang akuntabel, transparan, dan berkelanjutan. Dengan konsep self-learning, ASN dapat meningkatkan pengetahuan, keterampilan, serta memperoleh sertifikasi kompetensi secara mandiri. Hal ini diharapkan dapat mendorong terciptanya pengelolaan keuangan daerah yang lebih profesional, modern, dan terpercaya.</p>
@@ -657,12 +657,16 @@
                         <a href="/lms/batches/details/{{ batch.name }}"  class="arrow-link"><i class="bi bi-arrow-right"></i></a>
                         <div class="content">
                           <h4>
-                            <a href="/lms/batches/details/{{ batch.name }}" >{{ batch.title }}</a>
+                            <a href="/lms/batches/details/{{ batch.name }}" class="mt-3" >{{ batch.title }}</a>
                           </h4>
                           <p>{{ batch.description | truncate(120, True, '...') }}</p>
+                          <p class="text-muted mb-2">
+                            <i class="bi bi-calendar-event me-2"></i>
+                            {{ batch.start_date.strftime("%d %B %Y") }} - {{ batch.end_date.strftime("%d %B %Y") }}
+                          </p>
                             <div class="row">
                               <div class="col-12 text-center">
-                                  <a  href="/lms/batches/details/{{ batch.name }}" class="btn btn-custom-detail rounded-pill px-4 py-2 d-inline-flex align-items-center">
+                                  <a  href="/lms/batches/details/{{ batch.name }}" class="btn btn-custom rounded-pill px-4 py-2 d-inline-flex align-items-center">
                                     <i class="bi bi-grid me-2"></i>
                                     <span>Daftar</span>
                                   </a>
@@ -728,7 +732,7 @@
 
         <div class="row">
           <div class="col-12 text-center">
-              <a href="#projects" class="btn btn-custom rounded-pill px-4 py-2 d-inline-flex align-items-center">
+              <a href="/lms/courses" class="btn btn-custom rounded-pill px-4 py-2 d-inline-flex align-items-center">
                 <i class="bi bi-grid me-2"></i>
                 <span>Lihat Semua</span>
               </a>

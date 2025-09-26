@@ -6,7 +6,7 @@ def get_context(context):
         "LMS Course",
         fields=["name", "title", "image", "short_introduction"],
         order_by="creation desc",
-        limit=5
+        limit=4
     )
 
     # Ambil batch
