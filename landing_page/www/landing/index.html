@@ -725,8 +725,11 @@
 
               <div class="steps-grid">
                 <div class="step-card">
-                  <img src="{{ course.image }}" class="card-img-top" alt="{{ course.title }}">
-                  <div class="step-number">Lihat</div>
+                  <img src="{{ course.image }}" class="card-img-top img-fluid rounded shadow" alt="{{ course.title }}">
+
+                  <div class="step-number mt-4">
+                    <a href="/lms/courses/{{ course.name }}" class="btn btn-primary">Lihat</a>
+                  </div>
                   <h3>{{ course.title }}</h3>
                   <p>{{ course.short_introduction | truncate(100, True, "...") }}</p>
                 </div>
