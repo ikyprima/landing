@@ -119,7 +119,7 @@
 
               <li class="dropdown">
                 <a class="bi bi-chevron-down toggle-dropdown" href="#">
-                  <img src="{{ user_image }}" 
+                  <img src="{% if user_image %}{{ user_image }}{% else %}/assets/frappe/images/default-avatar.png{% endif %}"
                       alt="User Avatar" class="rounded-circle me-2" width="30" height="30">
                   {{ user_fullname }}
                 </a>
