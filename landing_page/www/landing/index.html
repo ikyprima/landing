@@ -112,9 +112,47 @@
             <li><a href="#webinar">Webinar</a></li>
             <li><a href="#selflearning">Self Learning</a></li>
             <li><a href="#peraturan">Peraturan</a></li>
-            <li><a href="#contact">Kontak</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Login</a></li>
+            <li><a href="#contact">Kontak</a></li>
+
+            {% if frappe.session.user != "Guest" %}
+              <li class="dropdown">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="{{ user_image or '/assets/frappe/images/default-avatar.png' }}" 
+                      alt="User Avatar" class="rounded-circle me-2" width="30" height="30">
+                  {{ user_fullname }}
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="/app/me">👤 Profil Saya</a></li>
+                  <li><a class="dropdown-item" href="/app/user-profile">⚙️ Pengaturan</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/?cmd=web_logout">🚪 Logout</a></li>
+                </ul>
+              </li>
+              {% else %}
+              <li><a href="/login">Login</a></li>
+            {% endif %}
+
+
+            <li class="dropdown">
+              <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="#">Dropdown 1</a></li>
+                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Deep Dropdown 1</a></li>
+                    <li><a href="#">Deep Dropdown 2</a></li>
+                    <li><a href="#">Deep Dropdown 3</a></li>
+                    <li><a href="#">Deep Dropdown 4</a></li>
+                    <li><a href="#">Deep Dropdown 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Dropdown 2</a></li>
+                <li><a href="#">Dropdown 3</a></li>
+                <li><a href="#">Dropdown 4</a></li>
+              </ul>
+            </li>
+
 
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
