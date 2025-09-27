@@ -16,6 +16,19 @@ def get_context(context):
         order_by="start_date desc",
         limit=5
     )
+
+    user = frappe.session.user
+    # Default guest
+    context.user_fullname = None
+    context.user_image = None
+
+    if user and user != "Guest":
+        # Ambil data user langsung dari DocType
+        user_doc = frappe.get_doc("User", user)
+
+        context.user_fullname = user_doc.full_name or user_doc.first_name or user
+        context.user_image = user_doc.user_image or "/assets/frappe/images/default-avatar.png"
+    
     return context
 
 @frappe.whitelist()

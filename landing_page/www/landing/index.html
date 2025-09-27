@@ -116,20 +116,18 @@
             <li><a href="#contact">Kontak</a></li>
 
             {% if frappe.session.user != "Guest" %}
-              {% set user_fullname = frappe.utils.get_fullname(frappe.session.user) %}
-              {% set user_image = frappe.get_cached_value("User", frappe.session.user, "user_image") %}
 
               <li class="dropdown">
                 <a class="bi bi-chevron-down toggle-dropdown" href="#">
-                  <img src="{{ user_image or '/assets/frappe/images/default-avatar.png' }}" 
+                  <img src="{{ user_image }}" 
                       alt="User Avatar" class="rounded-circle me-2" width="30" height="30">
                   {{ user_fullname }}
                 </a>
                 <ul>
-                  <li><a class="dropdown-item" href="/app/me">👤 Profil Saya</a></li>
-                  <li><a class="dropdown-item" href="/app/user-profile">⚙️ Pengaturan</a></li>
+                  <li><a class="dropdown-item" href="/app/me">Profil Saya</a></li>
+                  <li><a class="dropdown-item" href="/app/user-profile">Pengaturan</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="/?cmd=web_logout">🚪 Logout</a></li>
+                  <li><a class="dropdown-item" href="/?cmd=web_logout">Logout</a></li>
                 </ul>
               </li>
               {% else %}
