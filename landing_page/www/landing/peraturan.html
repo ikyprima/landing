@@ -49,7 +49,6 @@
           <a href="#" aria-label="Twitter" role="link" class="twitter"><i class="bi bi-twitter-x"></i></a>
           <a href="#" aria-label="Facebook" role="link" class="facebook"><i class="bi bi-facebook"></i></a>
           <a href="#" aria-label="Instagram" role="link" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" aria-label="Linkedin" role="link" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
     </div><!-- End Top Bar -->
@@ -169,7 +168,7 @@
                   </a>
                   <a href="#" class="menu-item" data-kategori="PP">
                     <i class="bi bi-arrow-right"></i>
-                    <span>Peraturan Presiden</span>
+                    <span>Peraturan Pemerintah</span>
                   </a>
                   <a href="#" class="menu-item" data-kategori="Perda">
                     <i class="bi bi-arrow-right"></i>
@@ -231,7 +230,6 @@
             <a href="" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
             <a href="" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
             <a href="" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="" aria-label="Linkedin"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
@@ -240,6 +238,8 @@
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About us</a></li>
+            <li><a href="https://sumbarprov.go.id/" target="_blank">Pemprov Sumatera Barat</a></li>
+            <li><a href="https://bpkad.sumbarprov.go.id/" target="_blank">BPKAD Sumatera Barat</a></li>
             <li><a href="#">Terms of service</a></li>
             <li><a href="#">Privacy policy</a></li>
           </ul>
@@ -481,7 +481,16 @@
       });
   
     }
-
+    window.addEventListener('scroll', function() {
+          const logo = document.getElementById('logo');
+          if (window.scrollY > 100) { // scroll lebih dari 70px
+              logo.src = "/assets/landing_page/img/logo-border.webp"; 
+              logo.classList.add('scrolled');
+          } else {
+              logo.src = "/assets/landing_page/img/logo.webp"; 
+              logo.classList.remove('scrolled');
+          }
+      });
     // Ambil nomor halaman dari URL (Laravel pagination link)
     function getPageNumber(url) {
         let params = new URL(url).searchParams;
