@@ -151,7 +151,8 @@ h6 {
   color: var(--default-color);
   transition: all 0.5s;
   z-index: 997;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
+    background-color:rgba(7, 12, 16, 0.8);
 }
 
 .header .topbar {
@@ -1235,7 +1236,7 @@ section,
   height: 100%;
   background: linear-gradient(
     135deg, 
-    color-mix(in srgb, var(--background-color), transparent 75%) 0%, 
+    color-mix(in srgb, var(--background-color), transparent 97%) 0%, 
     color-mix(in srgb, var(--background-color), transparent 25%) 500%
     );
 }
@@ -1280,7 +1281,9 @@ section,
   display: flex;
   gap: 24px;
   align-items: center;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
+  margin-top: 260px;
+  margin-left: 120px;
   flex-wrap: wrap;
 }
 
