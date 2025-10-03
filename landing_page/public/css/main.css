@@ -145,14 +145,13 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(0, 0, 0, 0);
+  --background-color: rgba(7, 12, 16, 0.345);
   --heading-color: #ffffff;
   --surface-color: rgba(255, 255, 255, 0.085);
   color: var(--default-color);
   transition: all 0.5s;
   z-index: 997;
-  /* background-color: var(--background-color); */
-    background-color:rgba(7, 12, 16, 0.8);
+  background-color: var(--background-color);
 }
 
 .header .topbar {
