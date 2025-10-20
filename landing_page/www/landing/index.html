@@ -118,9 +118,10 @@
 
               <li class="dropdown">
                 <a class="bi bi-chevron-down toggle-dropdown" href="#">
-                  <img src="{% if user_image %}{{ user_image }}{% else %}/assets/frappe/images/default-avatar.png{% endif %}"
+                  <img src="/assets/frappe/images/default-avatar.png"
                       alt="User Avatar" class="rounded-circle me-2" width="30" height="30">
-                  {{ user_fullname }}
+                  <!-- {{ user_fullname }} -->
+                    My Account
                 </a>
                 <ul>
                   <li><a class="dropdown-item" href="/lms/user/{{ username }}">Profil Saya</a></li>
